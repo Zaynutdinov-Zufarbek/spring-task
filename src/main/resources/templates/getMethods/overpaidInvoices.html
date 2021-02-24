@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overpaid Invoices</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<div style=" margin: 20px 80px;">
+    <table class="table table-sm table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody th:each="invoice : ${overpaidInvoices}">
+            <tr>
+                <th th:text="${invoice.getId()}"></th>
+                <td th:text="${invoice.getPayments().get(0).getAmount()}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

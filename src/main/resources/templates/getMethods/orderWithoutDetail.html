@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders Without Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<div style=" margin: 20px 80px;">
+    <table class="table table-sm table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody th:each="order : ${ordersWithoutDetails}">
+        <tr>
+            <th th:text="${order.getId()}"></th>
+            <th th:text="${order.getDate()}"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
